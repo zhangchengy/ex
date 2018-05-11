@@ -1,2 +1,1 @@
-# ex
-Just another repository
+﻿#practice
