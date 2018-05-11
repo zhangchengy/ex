@@ -6,18 +6,20 @@ import java.util.logging.FileHandler;
 import java.util.logging.Formatter;  
 import java.util.logging.Level;  
 import java.util.logging.LogRecord;  
-import java.util.logging.Logger;  
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;  
 
 public class TestLogJava {  
 
     public static void main(String[] args) throws IOException{  
         Logger log = Logger.getLogger("tesglog");  
         log.setLevel(Level.ALL);  
-        FileHandler fileHandler = new FileHandler("testlog.log");  
+        FileHandler fileHandler = new FileHandler("d:\\test.log",true);  
         fileHandler.setLevel(Level.ALL); 
-        
-        
-        fileHandler.setFormatter(new LogFormatter());  
+   
+        SimpleFormatter sf = new SimpleFormatter();
+        fileHandler.setFormatter(sf);
+ 
         log.addHandler(fileHandler);  
         log.info("This is test java util log");     
     }  
